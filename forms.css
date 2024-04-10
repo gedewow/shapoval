@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    color: #ffffff;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 5px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: navy;
+}
+
+

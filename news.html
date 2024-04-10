@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_kt.css">
+    <link rel="stylesheet" href="header.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header"><h1 class="h1">Шапка сайта</h1></div>
+    <div id="sidebar">
+       
+            <div class="btn btn-1"><a href="index.html">Главная </a></div> 
+            <div class="btn btn-2 dropdown-1 dropbtn-1">Каталог
+              <div class="dropdown-content dropdown-content-1">
+                <a href="#">Жанры</a>
+                <a href="newkt.html">Новые</a>
+                <a href="#">Популярные</a>
+                <a href="katalog.html">Все</a>
+              </div>
+            </div> 
+            <div class="btn btn-3"><a href="news.html">Новости</a></div> 
+            <div class="btn btn-4 dropdown-2 dropbtn-2">Контакты
+              <div class="dropdown-content dropdown-content-2">
+                <a href="https://web.whatsapp.com/">Вацап</a>
+                <a href="https://web.telegram.org/">Телеграм</a>
+                <a href="https://ru-ru.facebook.com/">Фейсбук</a>
+              </div>
+            </div>
+            <div class="btn btn-5"><a>Вход</a></div>
+   
+    </div>
+    <a href="#" id="openWindow">Открыть новое окно</a>
+
+    <script>
+        document.getElementById("openWindow").addEventListener("click", function(event) {
+  event.preventDefault();
+  var newWindow = window.open("", "_blank", "width=400, height=200");
+  newWindow.document.write("<h1>новое окно с некоторым текстом</h1>");
+});
+
+
+    </script>
+</body>
+</html>

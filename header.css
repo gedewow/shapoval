@@ -1,0 +1,101 @@
+.header {
+    background-color: #494949;
+    border-color: #ddd;
+    height: 80px; /* установим фиксированную высоту вместо процентов */
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #sidebar {
+    display: flex; /* Используем flexbox для центрирования элементов */
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .btn {
+    border: none;
+    padding: 10px 20px; /* Уменьшим отступы */
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    width: 17%;
+    height: 60px; /* Установим фиксированную высоту */
+  }
+  
+  /* Общие стили для кнопок */
+  .btn {
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    filter: brightness(0.9); /* Уменьшим яркость при наведении */
+  }
+  
+  /* Стили для конкретных кнопок */
+  .btn-1 {
+    background: #e74c3c;
+  }
+  
+  .btn-2 {
+    background: #2ecc71;
+  }
+  
+  .btn-3 {
+    background: #3498db;
+  }
+  
+  .btn-4 {
+    background: #34495e;
+  }
+  
+  .btn-5 {
+    background: #919294;
+  }
+  
+  /* Добавим отступ сверху при нажатии на кнопку */
+  .btn:active {
+    position: relative;
+    top: 4px;
+  }
+
+.dropdown-content-1 {
+    display: none;
+    position: absolute;
+    background: #27ae60;
+    min-width: 100%;
+   
+  }
+  .dropdown-content-2 {
+    display: none;
+    position: absolute;
+    background: #34495e;
+    min-width: 100%;
+   
+  }
+  
+  /* Ссылки внутри выпадающего */
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Изменить цвет выпадающих ссылок при наведении */
+  .dropdown-content-1 a:hover {
+    background: #2ecc71;
+  }
+  .dropdown-content-2 a:hover {
+    background: #2c3e50;
+  }
+  /* Показать выпадающее меню при наведении */
+  .dropdown-1:hover .dropdown-content-1 {
+    display: block;
+  }
+  .dropdown-2:hover .dropdown-content-2 {
+    display: block;
+  }
