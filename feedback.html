@@ -52,50 +52,34 @@
             <div class="btn btn-5"><a href="author.html">Вход</a></div>
    
     </div>
- 
-     
-    <form id="authForm">
-      <h1>Форма авторизации/регистрации</h1>
-      <label for="username">Имя пользователя:</label>
-      <input type="text" id="username" name="username">
-      <label for="password">Пароль:</label>
-      <input type="password" id="password" name="password">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email"><br>
-      <button onclick="validateForm()">Сохранить данные</button>
-  </form>
-  
+<body>
+<div class="feedback">
+    <div class="containerob">
+        <h1>Обратная связь</h1>
+        <form class="formob" action="/submit_feedback" method="post">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
 
-<!--  лабораторная 12 Реализовать в своем проекте форму-->
-    <script>
-       function validateForm() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var email = document.getElementById("email").value;
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-    if (username === "" || password === "" || email === "") {
-        alert("Пожалуйста, заполните все поля формы.");
-    } else {
-        var userData = {
-            username: username,
-            password: password,
-            email: email
-        };
-    if (password.length < 6) {
-                alert('Пароль должен содержать как минимум 6 символов.');
-                return false;
-            }
-        displayUserData(userData);
-    }
-}
+            <label for="subject">Тема:</label>
+            <input type="text" id="subject" name="subject" required>
 
-//function displayUserData(userData) {
-  //  var userDataDiv = document.getElementById("userData");
-    //userDataDiv.innerHTML = `
-      //  <p><strong>Имя пользователя:</strong> ${userData.username}</p>
-        //<p><strong>Пароль:</strong> ${userData.password}</p>
-       // <p><strong>Email:</strong> ${userData.email}</p>}
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
 
-      </script>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+<div class ="footer">
+       
+  <div class="text_hr_vp">
+      <img src="image/lg.png" class="img_lg_footer">
+      <h1 class="h1">VirtualPlay</h1>
+    </div>
+
+</div>
 </body>
 </html>

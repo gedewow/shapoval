@@ -7,6 +7,7 @@ form {
     margin: 0 auto;
     padding: 20px;
     color: #ffffff;
+    
 }
 
 label {
@@ -28,16 +29,67 @@ input[type="checkbox"] {
     margin-right: 5px;
 }
 
-button {
-    background-color: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
+
+
+
+@media only screen and (max-width: 1080px) { 
+
+
+    form {
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+        color: #ffffff;
+        
+    }
+
+}
+
+.feedback {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.containerob {
+    background-color: #373636;
+    padding: 20px;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+
+
+.formob {
+    display: flex;
+    flex-direction: column;
+}
+
+
+textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    resize: none;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: navy;
+    background-color: #0056b3;
 }
-
-
