@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="style_kt.css">
     <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Document</title>
 </head>
 <body class="original-bg">
@@ -34,7 +35,7 @@
     </div>
     
 </div>
-<script src="theme.js"></script>
+
     <div id="sidebar">
        
             <div class="btn btn-1"><a href="index.html">Главная </a></div> 
@@ -57,12 +58,13 @@
           background-color: #2e2e2e;
           color: #fff;
         }
-        .container {
+        .containerg {
           width: 80%;
           margin: 0 auto;
           background-color: #1a1a1a;
-          padding: 20px;
+          margin-bottom: 2%;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
         }
         table {
           width: 100%;
@@ -94,7 +96,7 @@
       </style>
     </head>
     <body>
-      <div class="container">
+      <div class="containerg">
         <h1 class="center">Жанры</h1>
         <table>
           <tbody>
@@ -122,13 +124,33 @@
         </table>
       </div>
 
-      <div class ="footer">
-       
-        <div class="text_hr_vp">
-            <img src="image/lg.png" class="img_lg_footer">
-            <h1 class="h1">VirtualPlay</h1>
-          </div>
+      <div class="footer">
+        <div class="container">
+            <div class="text_hr_vp_footer">
+                <img src="image/lg.png" class="img_lg_footer">
+                <h1 class="h1">VirtualPlay</h1>
+            </div>
+    
+            <div class="column">
+                <ul>
+                    <li><a href="#">о нас</a></li>
+                    <li><a href="#">сервисы</a></li>
+                    <li><a href="lab14.html">График продаж</a></li>
+                 
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    
+                    <li><a >Текущая дата</a></li>
+                    <li><a id="dateLink"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
  
     </div>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
     </body>
     </html>

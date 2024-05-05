@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style_kt.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Document</title>
 </head>
 <body class="original-bg">
@@ -35,7 +36,7 @@
     </div>
     
 </div>
-<script src="theme.js"></script>
+
     <div id="sidebar">
        
             <div class="btn btn-1"><a href="index.html">Главная </a></div> 
@@ -52,50 +53,116 @@
             <div class="btn btn-5"><a href="author.html">Вход</a></div>
    
     </div>
- 
-     
-    <form id="authForm">
+    <style>
+      #registrationForm {
+        display: none;
+      }
+    
+      .error-message {
+        color: red;
+        font-size: 12px;
+      }
+    </style>
+    
+    <div class="form">
       <h1>Форма авторизации/регистрации</h1>
-      <label for="username">Имя пользователя:</label>
-      <input type="text" id="username" name="username">
-      <label for="password">Пароль:</label>
-      <input type="password" id="password" name="password">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email"><br>
-      <button onclick="validateForm()">Сохранить данные</button>
-  </form>
-  
-
-<!--  лабораторная 12 Реализовать в своем проекте форму-->
+      <div id="loginForm">
+        <label for="login-username">Имя пользователя:</label>
+        <input type="text" id="login-username" name="login-username">
+        <p class="error-message" id="login-username-error"></p>
+        <label for="login-password">Пароль:</label>
+        <input type="password" id="login-password" name="login-password">
+        <p class="error-message" id="login-password-error"></p>
+        <button id="login-button">Войти</button>
+        <button id="registration-button">Регистрация</button>
+      </div>
+    
+      <div id="registrationForm" style="display: none;">
+        <label for="registration-username">Имя пользователя:</label>
+        <input type="text" id="registration-username" name="registration-username">
+        <p class="error-message" id="registration-username-error"></p>
+        <label for="registration-password">Пароль:</label>
+        <input type="password" id="registration-password" name="registration-password">
+        <p class="error-message" id="registration-password-error"></p>
+        <label for="registration-email">Email:</label>
+        <input type="email" id="registration-email" name="registration-email">
+        <p class="error-message" id="registration-email-error"></p>
+        <button id="save-button">Сохранить данные</button>
+      </div>
+    </div>
+    
     <script>
-       function validateForm() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var email = document.getElementById("email").value;
-
-    if (username === "" || password === "" || email === "") {
-        alert("Пожалуйста, заполните все поля формы.");
-    } else {
-        var userData = {
-            username: username,
-            password: password,
-            email: email
-        };
-    if (password.length < 6) {
-                alert('Пароль должен содержать как минимум 6 символов.');
-                return false;
-            }
-        displayUserData(userData);
-    }
-}
-
-//function displayUserData(userData) {
-  //  var userDataDiv = document.getElementById("userData");
-    //userDataDiv.innerHTML = `
-      //  <p><strong>Имя пользователя:</strong> ${userData.username}</p>
-        //<p><strong>Пароль:</strong> ${userData.password}</p>
-       // <p><strong>Email:</strong> ${userData.email}</p>}
-
-      </script>
+      document.getElementById('registration-button').addEventListener('click', function () {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('registrationForm').style.display = 'block';
+      });
+    
+      document.getElementById('login-button').addEventListener('click', function () {
+        const username = document.getElementById('login-username').value; const password = document.getElementById('login-password').value;
+        let error = false;
+    
+        if (username === "") {
+          document.getElementById('login-username-error').textContent = "Пожалуйста, заполните поле имени пользователя.";
+          error = true;
+        } else {
+          document.getElementById('login-username-error').textContent = "";
+        }
+    
+        if (password === "") {
+          document.getElementById('login-password-error').textContent = "Пожалуйста, заполните поле пароля.";
+          error = true;
+        } else {
+          document.getElementById('login-password-error').textContent = "";
+        }
+    
+        if (!error) {
+    
+          alert("Авторизация успешна!");
+        }
+      });
+    
+      document.getElementById('save-button').addEventListener('click', function () {
+        const username = document.getElementById('registration-username').value;
+        const password = document.getElementById('registration-password').value;
+        const email = document.getElementById('registration-email').value;
+        let error = false;
+    
+        if (username === "") {
+          document.getElementById('registration-username-error').textContent = "Пожалуйста, заполните поле имени пользователя.";
+          error = true;
+        } else {
+          document.getElementById('registration-username-error').textContent = "";
+        }
+    
+        if (password === "") {
+          document.getElementById('registration-password-error').textContent = "Пожалуйста, заполните поле пароля.";
+          error = true;
+        } else if (password.length < 6) {
+          document.getElementById('registration-password-error').textContent = "Пароль должен содержать как минимум 6 символов.";
+          error = true;
+        } else {
+          document.getElementById('registration-password-error').textContent = "";
+        }
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email === "") {
+          document.getElementById('registration-email-error').textContent = "Пожалуйста, заполните поле email.";
+          error = true;
+        } else if (!emailPattern.test(email)) {
+        document.getElementById('registration-email-error').textContent = "Неверный формат email.";
+        error = true;
+        } else {
+        document.getElementById('registration-email-error').textContent = "";
+        } 
+    
+        if (!error) {
+          alert("Регистрация успешна!");
+          document.getElementById('loginForm').style.display = 'block';
+       
+          document.getElementById('registrationForm').style.display = 'none';
+        }
+      });
+    </script>
+<script src="theme.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

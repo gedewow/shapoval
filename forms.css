@@ -2,7 +2,7 @@ h1 {
     text-align: center;
 }
 
-form {
+.form {
     width: 50%;
     margin: 0 auto;
     padding: 20px;
@@ -35,7 +35,7 @@ input[type="checkbox"] {
 @media only screen and (max-width: 1080px) { 
 
 
-    form {
+    .form {
         width: 90%;
         margin: 0 auto;
         padding: 20px;

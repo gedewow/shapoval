@@ -42,6 +42,11 @@ body {
     background-color: #999696;
     transition: background-color 0.5s ease;
   }
+
+   .light-theme .containerg {
+    background-color: #999696;
+    transition: background-color 0.5s ease;
+  }
   .light-theme .containerob {
     background-color: #999696;
     transition: background-color 0.5s ease;
@@ -91,27 +96,12 @@ a {
     background-color: #1a1a1a;
     color: #fff;
     padding: 2%;
-    }
-
-  
-
-    .img_lg_footer {
-
-      width: 7%; 
-      margin-right: 10px
-    }
-  
-    .footer{ 
-      background-color: #1a1a1a;
-      border-color: #ddd;
-      margin: 0 auto;
-   
-      text-transform: uppercase;
-      margin-bottom: 1%;
-      width: 85%;
-      height: 30%;
+    margin-bottom: 2%;
     
     }
+
+  
+
 
 
 .main {

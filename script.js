@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var currentDate = new Date().toLocaleDateString();
+    document.getElementById("dateLink").textContent = currentDate;
+});
+
+
 var delay = 3000; // Задержка перед скроллом в миллисекундах
 var carousel = $('#carousel');
 var cards = $('.card');
@@ -20,3 +26,5 @@ $('#next').click(function() {
     currentIndex = (currentIndex + 1) % cardCount;
     carousel.scrollLeft(currentIndex * carousel.width());
 });
+
+
