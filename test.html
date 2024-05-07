@@ -3,101 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    .slider {
-      position: relative;
-      width: 100%;
-    }
+    <title>Auto-scrolling Product Feed</title>
+    <link rel="stylesheet" href="style_kt.css"> <!-- Подключите Ваш CSS файл -->
+    <link rel="stylesheet" href="style.css"> <!-- Подключите Ваш CSS файл -->
+    <link rel="stylesheet" href="forms.css">
+    <style>
+        .main_1 {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            /* Скрываем ползунок прокрутки */
+            scrollbar-width: none; /* Firefox */
+            &::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+        }
 
-    .slides {
-      display: flex;
-      overflow: hidden;
-      width: 190%; /* 5 * 100% для 5 картинок */
-      height: 20%;
-    }
+        .card {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            margin-right: 10px;
+        }
 
-    .slides img {
-      width: 500%; /* 100% / 5 для 5 картинок */
-      display: none;
-    }
+        /* Кнопки для прокрутки */
+        .scroll-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin: 0 auto;
+        }
 
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-10%);
-      cursor: pointer;
-    }
-
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
-  </style>
+        .scroll-buttons button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            
+        }
+    </style>
 </head>
 <body>
- <div class="slider">
-    <div class="slides">
-      <img src="image/dark_rider-cover.jpg" alt="Image 1">
-      <img src="image/force_mage-cover.jpg" alt="Image 2">
-      <img src="image/dark_rider-cover.jpg" alt="Image 1">
-      <img src="image/force_mage-cover.jpg" alt="Image 2">
-      <img src="image/dark_rider-cover.jpg" alt="Image 1">
-      <img src="image/force_mage-cover.jpg" alt="Image 2">
-      <img src="image/dark_rider-cover.jpg" alt="Image 1">
-      <img src="image/force_mage-cover.jpg" alt="Image 2">
-      <img src="image/dark_rider-cover.jpg" alt="Image 1">
-      <img src="image/force_mage-cover.jpg" alt="Image 2">
-      <img src="image/dark_rider-cover.jpg" alt="Image 1">
-      <img src="image/force_mage-cover.jpg" alt="Image 2">
-      <img src="image/dark_rider-cover.jpg" alt="Image 1">
-      <img src="image/force_mage-cover.jpg" alt="Image 2">
-      <img src="image/dark_rider-cover.jpg" alt="Image 1">
-      
+    <div class="main">
+        
+        <h2 class="h_0">Рекомендуемое</h2>
+        <div class="main_1">
+            <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank" class="katalog">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="image/dark_rider-cover.jpg" class="cover-image" />
+                    </div>
+                    <img src="image/dark_rider-title.png" class="title" />
+                    <div class="rating">4.5</div>
+                    <div class="price">$19.99</div>
+                </div>
+            </a>
+            <a href="https://www.mythrillfiction.com/force-mage" alt="Mythrill" target="_blank" class="katalog">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="image/force_mage-cover.jpg" class="cover-image" />
+                    </div>
+                    <img src="image/force_mage-title.png" class="title" />
+                    <div class="rating">4.2</div>
+                    <div class="price">$24.99</div>
+                </div>
+            </a>
+       
+   
+  
 
+        </div>
+
+        <!-- Кнопки для прокрутки -->
+        <div class="scroll-buttons">
+            <button id="scrollLeft">Назад</button>
+            <button id="scrollRight">Вперед</button>
+        </div>
+        
     </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-  </div>
+       
+    <div class="main">
+        <h2 class="h_0">Новое</h2>
+        <div class="main_1">
+            <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank" class="katalog">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="image/dark_rider-cover.jpg" class="cover-image" />
+                    </div>
+                    <img src="image/dark_rider-title.png" class="title" />
+                    <div class="rating">4.5</div>
+                    <div class="price">$19.99</div>
+                </div>
+            </a>
+            <a href="https://www.mythrillfiction.com/force-mage" alt="Mythrill" target="_blank" class="katalog">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="image/force_mage-cover.jpg" class="cover-image" />
+                    </div>
+                    <img src="image/force_mage-title.png" class="title" />
+                    <div class="rating">4.2</div>
+                    <div class="price">$24.99</div>
+                </div>
+            </a>
+       
+   
+  
+
+        </div>
+
+        <!-- Кнопки для прокрутки -->
+        <div class="scroll-buttons">
+            <button id="scrollLeft">Назад</button>
+            <button id="scrollRight">Вперед</button>
+        </div> 
+          
+    </div>
 
 
-</body>
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slides img');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var container = $('.main_1');
+            var cardCount = $('.card').length;
+            var currentIndex = 0;
 
- function showSlide(index) {
-      const slideWidth = 100 / slides.length;
-      const translateX = -index * slideWidth;
+            // Дублируем карточки
+            $('.card').clone().prependTo(container);
+            $('.card').clone().appendTo(container);
 
-      slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${translateX}%)`;
-        slide.style.display = i === index ? 'block' : 'none';
-      });
-    }
+            // Функция для прокрутки к следующей карточке
+            function scrollToCard(index) {
+                var targetCard = $('.card').eq(index);
+                var targetPosition = targetCard.position().left;
+                container.scrollLeft(targetPosition);
+            }
 
-    function nextSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
-      showSlide(slideIndex);
-    }
+            // Обработчики для кнопок прокрутки
+            $('#scrollLeft').click(function() {
+                currentIndex = (currentIndex - 1 + cardCount * 2) % (cardCount * 2);
+                scrollToCard(currentIndex);
+            });
 
-    function prevSlide() {
-      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-      showSlide(slideIndex);
-    }
+            $('#scrollRight').click(function() {
+                currentIndex = (currentIndex + 1) % (cardCount * 2);
+                scrollToCard(currentIndex);
+            });
 
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
+           
+            // Запускаем прокрутку каждые 3 секунды (3000 миллисекунд)
+            setInterval(function() {
+                currentIndex = (currentIndex + 1) % (cardCount * 2);
+                scrollToCard(currentIndex);
+            }, 3000);
+        });
 
-    showSlide(slideIndex);
-
-    setInterval(nextSlide, 5000); // автоматическое переключение каждые 5 секунд
-  </script>
+       
+    </script>
 </body>
 </html>

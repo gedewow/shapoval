@@ -74,9 +74,7 @@ a {
   border:none;
 }
 
-.katalog {
-  display: inline-block;
-}
+
 
 .h_0 {
   color: #ffffff;
@@ -88,22 +86,18 @@ a {
   
 }
 
-.main{
-
-    height: 100%;
-    margin:0 auto;
-    width: 85%;
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 2%;
-    margin-bottom: 2%;
-    
-    }
+.main {
+  height: 100%;
+  margin: 0 auto;
+  width: 85%;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 2%;
+  margin-bottom: 2%;
+  position: relative;
+}
 
   
-
-
-
 .main {
   display: flex;
   flex-wrap: wrap;
